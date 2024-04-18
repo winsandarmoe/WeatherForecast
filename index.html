@@ -10,17 +10,19 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="weather.css" />
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <title>My weather application</title>
   </head>
   <body>
     <div class="weather-app">
       <header>
-        <form>
+        <form id="search-form">
           <input
             type="search"
             placeholder="Enter a city.."
             required
             class="search-input"
+            id="search-input"
           />
           <input type="submit" value="Search" class="search-button" />
         </form>
@@ -28,15 +30,19 @@
       <main>
         <div class="current-weather">
           <div>
-            <h1 class="current-city">Paris</h1>
-            <p class="current-details">
-              Saturday 15:32, moderate rain <br />
-              Humidity: <strong>87%</strong>, Wind: <strong>7.2km/h</strong>
+            <h1 class="current-city" id="current-city">Paris</h1>
+            <p class="current-details" id="currentdate">
+              <span id="time"></span>, <span id="description"></span> <br />
+              Humidity: <strong id="humidity"></strong>, Wind:
+              <strong id="Windspeed"></strong>
             </p>
           </div>
           <div class="current-temperature">
-            <span class="current-temperature-icon">☀️</span
-            ><span class="current-temperature-value">24</span
+            <div id="icon" span="current-temperature-icon"></div>
+            <span
+              class="current-temperature-value"
+              id="weather-temperature"
+            ></span
             ><span class="current-temperature-unit">°C</span>
           </div>
         </div>
@@ -45,7 +51,13 @@
         <p>
           This project was coded by
           <a href="#" target="_blank">Matt Delac</a> and is
-          <a href="#" target="_blank"> on GitHub</a> and
+          <a
+            href="https://github.com/winsandarmoe/WeatherForecast"
+            target="_blank"
+          >
+            on GitHub</a
+          >
+          and
           <a href="#" target="_blank">hosted on Netlify</a>
         </p>
       </footer>
